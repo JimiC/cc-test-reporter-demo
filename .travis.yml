@@ -1,0 +1,26 @@
+language: node_js
+os:
+  - linux
+  - osx
+node_js:
+  - node   # latest node
+git:
+  depth: 5
+  submodules: false
+matrix:
+  allow_failures:
+    - node_js: node
+  fast_finish: true
+env:
+  global:
+    - CC_OS_NAME=if [[ $TRAVIS_OS_NAME == 'osx']]; then 'darwin'; else $TRAVIS_OS_NAME; fi
+before_script:
+  - curl -sL https://codeclimate.com/downloads/test-reporter/test-reporter-latest-($CC_OS_NAME)-amd64 > cc-test-reporter
+  - chmod +x cc-test-reporter
+  - cc-test-reporter before-build
+install:
+  - npm install
+cache: npm
+script: npm test
+after_success:
+  - if [[ $CC_TEST_REPORTER_ID ]] ; then cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi

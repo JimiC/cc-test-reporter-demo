@@ -1,0 +1,21 @@
+{
+  "name": "codeclimate-test-reporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "dependencies": {
+    "vscode": "^1.1.34"
+  },
+  "devDependencies": {
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2"
+  }
+}
