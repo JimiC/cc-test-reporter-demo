@@ -23,11 +23,9 @@ plugins:
   tslint:
     enabled: true
 exclude_patterns:
-  - "*"
   - ".*"
-  - "*/"
   - ".*/"
+  - "*.*"
+  - "!*.md"
   - "!src/**/*.ts"
   - "!test/**/*.ts"
-  - "!*.md"
-  - "!LICENSE"
